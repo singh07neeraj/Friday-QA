@@ -1,8 +1,7 @@
 import header from '../page_objects/page/Header';
-import { asserMsg, users } from '../common/base';
+import { asserMsg, users, logIntoSportsbook } from '../common/base';
 
 const assertLoggedState = (balance) => {
-    browser.pause(2000); //due to slow loading of balance
     expect(header.depositButton.text).to.equal('Deposit');
     expect(header.balanceButton.text).to.equal(balance);
     expect(header.registerButton.isVisible, `${header.registerButton.name} ${asserMsg.isVisible}`)
@@ -15,17 +14,7 @@ describe('user is logged in', () => {
     before('', () => {
         browser.reload();
         header.open();
-        header.loginButton.waitForElement();
-        header.loginButton.click();
-        header.usernameInput.waitForElement();
-        header.usernameInput.inputValue = users.positive.login;
-        header.passwordInput.inputValue = users.positive.password;
-        header.loginSubmitButton.click();
-        header.depositButton.waitForElement();
-    });
-    beforeEach('', () => {
-        header.open();
-        header.balanceButton.waitForElement();
+        logIntoSportsbook(users.positive.login, users.positive.password);
     });
     it('initial logged state', () => {
         assertLoggedState('£0.00');
