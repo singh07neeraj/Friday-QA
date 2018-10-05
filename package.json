@@ -1,0 +1,37 @@
+{
+  "scripts": {
+    "clean": "rm -rf allure-results && rm -rf junit-results",
+    "node-inspector": "node-inspector --debug-port 5859 --no-preload",
+    "lint:test": "eslint ./src/test/**",
+    "allure-report": "./node_modules/.bin/allure generate --clean ./allure-results/",
+    "junit-report": "./node_modules/.bin/junit-viewer --results=./junit-results --save=junit-results.html && open junit-results.html",
+    "test:e2e:local": "./node_modules/.bin/wdio ./src/test/config/localConfig.js",
+    "test:e2e:ci": "./node_modules/.bin/wdio ./src/test/config/jenkinsConfig.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "mocha": "^5.2.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "wdio-allure-reporter": "^0.7.0",
+    "wdio-firefox-profile-service": "^0.1.1",
+    "wdio-junit-reporter": "^0.4.3",
+    "wdio-mocha-framework": "^0.6.2",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-spec-reporter": "^0.1.4",
+    "webdriverio": "^4.13.2"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "deepmerge": "^2.1.0",
+    "dotenv": "^5.0.1",
+    "winston": "^2.4.2",
+    "yargs": "^11.1.0"
+  }
+}

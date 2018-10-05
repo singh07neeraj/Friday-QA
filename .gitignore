@@ -1,0 +1,14 @@
+.idea
+node_modules
+
+allure-results
+junit-results
+
+errorShots
+
+package-lock.json
+yarn.lock
+yarn-error.log
+
+/screenshots/actual
+/screenshots/diff
