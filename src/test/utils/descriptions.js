@@ -1,10 +1,6 @@
 export const testDesc = {
-    suiteE2E: 'E2E',
-    suiteVRT: 'VRT',
-    acceptance: (story = 'add user story!') => (
-        description = 'add description!',
-        criterion = 'QA',
-    ) => `${story}.${criterion} ${description}`,
+    describe: (description = 'add description!') => description,
+    it: (description = 'add description!') => description,
 };
 
 export const asserMsg = {

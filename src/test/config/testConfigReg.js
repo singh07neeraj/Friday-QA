@@ -13,7 +13,6 @@ const envNames = {
 };
 
 export default {
-    asyncNbOfAttempts: 4,
     logLevel: logLevels.info,
     viewPortSize: { width: 400, height: 2200 },
     viewPortPos: { x: 1, y: 1 },
