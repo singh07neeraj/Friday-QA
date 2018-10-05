@@ -52,7 +52,7 @@ export const fields = {
         cssSelector: '#logoutLink',
     },
     //deposit part
-    depositIframe: {
+    accountIframe: {
         cssSelector: '.mfp-iframe',
     },
     depositMethodButton: {

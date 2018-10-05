@@ -19,18 +19,11 @@ export class Header extends Page {
         this.logoutButton = new Button(fields.logoutButton.name, fields.logoutButton.cssSelector);
         this.menuDepositButton = new Button(fields.menuDepositButton.name, fields.menuDepositButton.cssSelector);
         this.menuWithdrawButton = new Button(fields.menuWithdrawButton.name, fields.menuWithdrawButton.cssSelector);
-        this.menuPreferencesButton = new Button(fields.menuPrefButton.name, fields.menuPrefButton.cssSelector);
+        this.menuPreferencesButton = new Button(fields.menuPrefButton.name, fields.menuPrefButton.cssSelector,
+            fields.accountIframe.cssSelector);
         this.menuGCButton = new Button(fields.menuGCButton.name, fields.menuGCButton.cssSelector);
-        //deposit part
-        this.depositMethodButton = new Button(fields.depositMethodButton.name, fields.depositMethodButton.cssSelector);
-        //withdraw part
-        this.withdrawAmount = new Button(fields.withdrawAmount.name, fields.withdrawAmount.cssSelector);
-        //preferences part
-        this.updateMarketingButton = new Button(fields.updateMarketing.name, fields.updateMarketing.cssSelector);
         //gaming control part
         this.GCContent = new Button(fields.GCContent.name, fields.GCContent.cssSelector);
-        //registration
-        this.regFirstName = new Button(fields.regFirstName.name, fields.regFirstName.cssSelector);
     }
 }
 
