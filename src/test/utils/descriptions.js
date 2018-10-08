@@ -3,7 +3,7 @@ export const testDesc = {
     it: (description = 'add description!') => description,
 };
 
-export const asserMsg = {
+export const assertMsg = {
     notVisible: 'is not visible',
     isVisible: 'is still visible, but shouldn\'t be',
     hasNoText: 'has no text or text is and empty string',
