@@ -1,85 +1,78 @@
-export const fields = {
+export const headerFields = {
     //SB header with not logged user
     loginButton: {
         name: 'loginButton',
-        cssSelector: '.account-tab__text.-login',
+        cssSel: '.account-tab__text.-login',
     },
     registerButton: {
         name: 'registerButton',
-        cssSelector: '#joinLink',
+        cssSel: '#joinLink',
     },
     //SB header with logged user
     depositButton: {
         name: 'depositButton',
-        cssSelector: '#depositHeaderButtonLink',
+        cssSel: '#depositHeaderButtonLink',
     },
     balanceButton: {
         name: 'balanceButton',
-        cssSelector: '.account-tab__text.-account',
+        cssSel: '.account-tab__text.-account',
     },
     //login part
     usernameInput: {
         name: 'usernameInput',
-        cssSelector: '#loginUsernameInput',
+        cssSel: '#loginUsernameInput',
     },
     passwordInput: {
         name: 'passwordInput',
-        cssSelector: '#loginPasswordInput',
+        cssSel: '#loginPasswordInput',
     },
     loginSubmitButton: {
         name: 'loginSubmitButton',
-        cssSelector: '#loginButton',
+        cssSel: '#loginButton',
     },
     //account menu part
     menuDepositButton: {
         name: 'menuDepositButton',
-        cssSelector: '#depositLink',
+        cssSel: '#depositLink',
     },
     menuWithdrawButton: {
         name: 'menuWithdrawButton',
-        cssSelector: '#withdrawLink',
+        cssSel: '#withdrawLink',
     },
     menuPrefButton: {
         name: 'menuPreferencesButton',
-        cssSelector: '#preferencesLink',
+        cssSel: '#preferencesLink',
     },
     menuGCButton: {
         name: 'menuGamblingControlsButton',
-        cssSelector: '#gcHubLink',
+        cssSel: '#gcHubLink',
     },
     logoutButton: {
         name: 'logoutButton',
-        cssSelector: '#logoutLink',
+        cssSel: '#logoutLink',
     },
     //deposit part
+    depositIframe: {
+        cssSel: '.mfp-iframe',
+    },
     accountIframe: {
-        cssSelector: '.mfp-iframe',
+        cssSel: '.mfp-iframe',
     },
     depositMethodButton: {
         name: 'depositMethodButton',
-        cssSelector: '#paymentGROUP_DEBITCARD_CC',
+        cssSel: '#paymentGROUP_DEBITCARD_CC',
     },
     //withdraw
     withdrawAmount: {
         name: 'withdrawAmount',
-        cssSelector: '#txnAmount',
-    },
-    //preferences
-    updateMarketing: {
-        name: 'updateMarketingButton',
-        cssSelector: '#updateMarketingDetails',
-    },
-    //gambling controls
-    GCContent: {
-        name: 'gamblingControlsContent',
-        cssSelector: '.content.landing',
+        cssSel: '#txnAmount',
     },
     //registration
     registerIframe: {
-        cssSelector: '#cp-reg-modal-iframe',
+        cssSel: '#cp-reg-modal-iframe',
     },
     regFirstName: {
         name: 'regFirstName',
-        cssSelector: '#reg-firstName',
+        cssSel: '#reg-firstName',
     },
 };

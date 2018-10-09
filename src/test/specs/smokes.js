@@ -1,18 +1,18 @@
-import header from '../page_objects/page/Header';
-import preferences from '../page_objects/page/Preferences';
-import { asserMsg, users, logIntoSportsbook} from '../common/base';
+import header from '../page_objects/page/sbHeader/Header';
+import preferences from '../page_objects/page/myAccount/Preferences';
+import { assertMsg, users, testDesc } from '../common/base';
 
-describe('description needed', () => {
+describe(testDesc.describe('Smoke Suite'), () => {
     before('', () => {
         browser.reload();
         header.open();
-        logIntoSportsbook(users.positive.login, users.positive.password);
+        header.logIntoSportsbook(users.positive.login, users.positive.password);
     });
-    it('description needed', () => {
+    it(testDesc.it('description needed'), () => {
         header.balanceButton.click();
         header.menuPreferencesButton.clickAndSwitch();
         preferences.updateMarketingButton.waitForElement(10000);
         expect(preferences.updateMarketingButton.isVisible,
-            `${preferences.updateMarketingButton.name} ${asserMsg.notVisible}`).to.equal(true);
+            `${preferences.updateMarketingButton.name} ${assertMsg.notVisible}`).to.equal(true);
     });
 });
