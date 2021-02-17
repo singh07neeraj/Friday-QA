@@ -12,7 +12,10 @@
     "lint:fix": "yarn lint --fix",
     "lint": "eslint .",
     "node-inspector": "node-inspector --debug-port 5859 --no-preload",
-    "test:e2e:bs": "./node_modules/.bin/wdio ./src/test/config/browserstackConfig.js",
+    "test:e2e:bs:windows": "./node_modules/.bin/wdio ./src/test/config/browserstackConfigWindows.js",
+    "test:e2e:bs:mac": "./node_modules/.bin/wdio ./src/test/config/browserstackConfigMac.js",
+    "test:e2e:bs:android": "./node_modules/.bin/wdio ./src/test/config/browserstackConfigAndroid.js",
+    "test:e2e:bs:ios": "./node_modules/.bin/wdio ./src/test/config/browserstackConfigiOS.js",
     "test:e2e:local": "./node_modules/.bin/wdio ./src/test/config/localConfig.js"
   },
   "husky": {
