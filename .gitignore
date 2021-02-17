@@ -1,3 +1,5 @@
+.DS_Store
+
 .idea
 node_modules
 
@@ -7,8 +9,10 @@ junit-results
 errorShots
 
 package-lock.json
-yarn.lock
 yarn-error.log
 
 /screenshots/actual
 /screenshots/diff
+*.iml
+*.err
+*.log

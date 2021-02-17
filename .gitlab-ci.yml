@@ -1,0 +1,14 @@
+image: docker-registry.prod.williamhill.plc/central-git-yarn-lerna-ci-nodejs10:0.3.0
+
+stages:
+  - lint
+
+lint:
+  stage: lint
+  tags:
+    - customer_engagement_dev
+  except:
+    - tags
+  script:
+    - yarn --silent --non-interactive --frozen-lockfile
+    - yarn lint

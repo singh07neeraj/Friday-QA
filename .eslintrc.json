@@ -1,16 +1,22 @@
 {
-  "extends": "airbnb-base",
+  "extends": [
+    "@central-products",
+    "@central-products/eslint-config/overrides/node-shared-globals",
+    "@central-products/eslint-config/overrides/browser",
+    "@central-products/eslint-config/overrides/module",
+    "@central-products/eslint-config/overrides/prettier"
+  ],
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "$": true,
+    "$$": true,
+    "browser": true,
+    "expect": true
+  },
   "rules": {
-    "object-curly-newline": [1],
-    "linebreak-style": 1,
-    "no-undef": 1,
-    "indent": [2, 4],
-    "spaced-comment": 0,
-    "eol-last": 0,
-    "import/prefer-default-export": [0],
-    "max-len": [
-      2,
-      120
-    ]
+    "camelcase": ["error", { "allow": ["bs_local", "real_mobile", "os_version"] }],
+    "no-console": "off"
   }
 }

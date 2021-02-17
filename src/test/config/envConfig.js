@@ -1,23 +1,20 @@
-// eslint-disable-next-line prefer-destructuring
-const argv = require('yargs').argv;
+const urls = require('./urls.json');
+const { argv } = require('yargs').require('env').choices('env', Object.keys(urls.url));
 
-if (typeof argv.env === 'undefined') {
-    console.log('--env variable have to be provided from command line');
+const { env } = argv;
+process.env.ENV = env;
+
+function getLang(v) {
+  const match = v.match(/-(es|it)$/);
+  return (match && match[1]) || 'en';
 }
 
-if (typeof process.env.ENV === 'undefined') {
-    process.env.ENV = argv.env;
-}
-
-const buildDefaultUrl = (env) => {
-    const envPostfix = (env === 'liv') ? '' : `-${env}`;
-    return `http://sports.williamhill${envPostfix}.com/betting/`;
-};
-
-const exportUrl = buildDefaultUrl(process.env.ENV);
-
-const exportUrlFull = `${exportUrl}`;
+const exportUrlFull = urls.url[env];
+const lang = getLang(env);
+console.log(exportUrlFull);
 
 module.exports = {
-    exportUrlFull,
+  exportUrlFull,
+  lang,
+  env,
 };

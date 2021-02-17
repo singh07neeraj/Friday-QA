@@ -1,0 +1,11 @@
+{
+  "buildSmoke": "CP-MyAccount-MYACC-Smokes",
+  "buildVRT": "CP-MyAccount-MYACC-VRT",
+  "projectNameBS": "CP-MyAccount-MYACC",
+  "browserstack": {
+    "local": true,
+    "video": true,
+    "user": "joannam1",
+    "key": "FCn5GfodbtAzzteakE71"
+  }
+}
