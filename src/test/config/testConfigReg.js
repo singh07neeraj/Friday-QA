@@ -1,20 +1,20 @@
 const logLevels = {
-    debug: 'debug',
-    info: 'info',
-    error: 'error',
+  debug: 'debug',
+  info: 'info',
+  error: 'error',
 };
 
 const envNames = {
-    pp1: 'pp1',
-    pp2: 'pp2',
-    pp3: 'pp3',
-    pt1: 'pt1',
-    liv: 'liv',
+  pp1: 'pp1',
+  pp2: 'pp2',
+  pp3: 'pp3',
+  pt1: 'pt1',
+  liv: 'liv',
 };
 
 export default {
-    logLevel: logLevels.info,
-    viewPortSize: { width: 400, height: 2200 },
-    viewPortPos: { x: 1, y: 1 },
-    envNames,
+  logLevel: logLevels.info,
+  viewPortSize: { width: 400, height: 2200 },
+  viewPortPos: { x: 1, y: 1 },
+  envNames,
 };
