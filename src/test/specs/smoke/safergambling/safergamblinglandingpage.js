@@ -53,6 +53,7 @@ tags('desktkop', 'mobile').describe('Smoke suite - Safer Gambling', () => {
   });
 
   it('should display Account Closure landing page', () => {
+    saferGambling.accountClosureTile.scrollIntoView();
     saferGambling.accountClosureTile.click();
     expectWdio(saferGambling.accountClosureTileLandingPage).toBeDisplayed();
   });

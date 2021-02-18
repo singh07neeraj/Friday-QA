@@ -1,5 +1,8 @@
 {
-  "buildSmoke": "CP-MyAccount-MYACC-Smokes",
+  "buildSmokeWindows": "CP-MyAccount-MYACC-Smokes Desktop Windows",
+  "buildSmokeMac": "CP-MyAccount-MYACC-Smokes Desktop Mac",
+  "buildSmokeAndroid": "CP-MyAccount-MYACC-Smokes Android",
+  "buildSmokeiOS": "CP-MyAccount-MYACC-Smokes iOS",
   "buildVRT": "CP-MyAccount-MYACC-VRT",
   "projectNameBS": "CP-MyAccount-MYACC",
   "browserstack": {
