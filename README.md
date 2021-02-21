@@ -1,4 +1,4 @@
-# MyAccount E2E tests
+# Friday QA Assignment
 
 ## Install
 
@@ -45,7 +45,7 @@ $ yarn
   ```
   yarn test:e2e:local --spec=[relative path to test file] --env=[env]
   ```
-- Jenkins with e2e test jobs: https://sqa62.jenkins.sqa.brs.nonprod.williamhill.plc/job/SpitfireMyAccount/
-
-[urls.json]: https://git.nonprod.williamhill.plc/central-services/spitfire-myaccount-e2e-tests/blob/develop/src/test/config/urls.json
-[specs]: https://git.nonprod.williamhill.plc/central-services/spitfire-myaccount-e2e-tests/tree/develop/src/test/specs
+- Start locally one test file sample
+  ```
+  yarn test:e2e:local  --suite=navigationExternalLinks  --env=liv
+  ```

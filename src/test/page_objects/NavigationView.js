@@ -1,77 +1,84 @@
 import Page from './Page';
-import accountHistoryView from './AccountHistoryView';
-import depositView from './DepositLimitsView';
-import myAccountView from './MyAccountView';
-import myBetsView from './MyBetsView';
-import header from './Header';
-import { executeClick } from '../utils/executeCode';
-import envConfig from '../config/envConfig';
-
-const urls = require('../config/urls.json');
-
 export class NavigationView extends Page {
-  get closeButton() {
-    return $('.cp-ma-header-title__right-element button');
+  get cookiesAccept() {
+    return $('.uc-btn-accept-wrapper button');
+  }
+  get insured() {
+    return $('(//*[contains(@class,"RadioButtonListField__radioImage")])[1]');
   }
 
-  get standaloneWrapper() {
-    return $('div.cp-ma-standalone-wrapper');
+  get registeredOrReRegistered() {
+    return $('(//*[contains(@class,"RadioButtonListField__radioImage")])[2]');
   }
 
-  get ccTile() {
-    return $('div.cp-ma-cc-tile');
+  get Continue() {
+    return $('[type="submit"]');
   }
 
-  get welcomeMessage() {
-    return $('.cp-ma-welcome-bar__name');
+  get yes() {
+    return $('[value="Yes"]');
   }
 
-  get accountInfo() {
-    return $('.cp-ma-header-title span.cp-ma-header-welcome__info');
+  get no() {
+    return $('[value="No"]');
   }
 
-  get accountInfoTooltip() {
-    return $('div[data-test-id="Tooltip.tip"] .cp-ma-header-welcome__tip');
+  get carUsed() {
+    return $('[value="used"]');
   }
 
-  get myBetsButton() {
-    return $('div[data-test-handler="myBets"]');
+  get carBrandNew() {
+    return $('[value="brandNew"]');
   }
 
-  get accountHistoryButton() {
-    return $('div[data-test-handler="accountHistory"]');
+  get selectCar() {
+    return $('[name="make"]');
   }
 
-  get myAccountButton() {
-    return $('div[data-test-handler="myAccount"]');
+  get carModel() {
+    return $('[name="model"]');
   }
 
-  get withdrawButton() {
-    return $('div[data-test-handler="withdraw"]');
+  get shapeIsTheCar() {
+    return $('[name="bodyType"]');
   }
 
-  get reverseWithdrawButton() {
-    return $('div[data-test-handler="reversalWithdraw"]');
+  get engin() {
+    return $('[name="engine"]');
+  }
+  get fuelType() {
+    return $('[name="fuelType"]');
   }
 
-  get depositLimitsButton() {
-    return $('div[data-test-handler="depositLimit"]');
+  get enginePower() {
+    return $('[name="enginePower"]');
   }
 
-  get myRewardsButton() {
-    return $('div[data-test-handler="myRewards"]');
+  get monthYearFirstRegistered() {
+    return $('[name="monthYearFirstRegistered"]');
   }
 
-  get logoutButton() {
-    return $('.cp-ma-footer div button');
+  get monthYearOwnerRegistered() {
+    return $('[name="monthYearOwnerRegistered"]');
+  }
+  get birthDate() {
+    return $('[name="birthDate"]');
   }
 
-  get navigationTiles() {
-    return $$('div.cp-ma-navigation-menu-tile');
+  get birthDateText() {
+    return $('[data-test-id="wizardTitle"]');
   }
 
-  get navigationSATiles() {
-    return $$('div.cp-ma-cc-tile__text');
+  get carOwnerPostcode() {
+    return $('[name="carOwnerPostcode"]');
+  }
+
+  get claimsClass() {
+    return $$('[name="sf"]');
+  }
+
+  get dontKnow() {
+    return $('[value="dont_know"]');
   }
 
   get footerHelp() {
@@ -90,120 +97,33 @@ export class NavigationView extends Page {
     return $('div[data-test-handler="cp-ma-balance-balance__element-freeBets"]');
   }
 
-  showAccountInfoTooltip() {
-    this.accountInfo.waitForDisplayed();
-    this.accountInfo.click();
-    this.accountInfoTooltip.waitForDisplayed();
-    return this;
-  }
-
-  countAllNavigationTiles() {
-    return this.navigationTiles.length;
-  }
-
-  countAllMyaccountTabTiles() {
-    this.ccTile.waitForDisplayed();
-    return this.navigationSATiles.length;
-  }
-
-  goToMyBetsView() {
-    this.myBetsButton.waitForExist();
-    this.myBetsButton.click();
-    return myBetsView;
-  }
-
-  goToAccountHistoryView() {
-    this.accountHistoryButton.waitForExist();
-    this.accountHistoryButton.click();
-    if (browser.getUrl().includes('es')) {
-      accountHistoryView.summaryExportButton.waitForExist();
-    }
-    accountHistoryView.transactionComponent.waitForExist();
-    return accountHistoryView;
-  }
-
-  goToWithdrawView() {
-    this.withdrawButton.waitForExist();
-    this.withdrawButton.click();
-  }
-
-  goToReverseWithdrawView() {
-    this.reverseWithdrawButton.waitForExist();
-    this.reverseWithdrawButton.click();
-  }
-
-  goToFeedbackView() {
-    this.footerFeedback.waitForExist();
-    executeClick(this.footerFeedback);
-  }
-
-  goToMyAccountView() {
-    this.openMainView();
-    this.myAccountButton.waitForDisplayed();
-    this.myAccountButton.moveTo();
-    this.myAccountButton.click();
-    return myAccountView;
-  }
-
-  goToDepositLimitsView() {
-    this.depositLimitsButton.waitForDisplayed();
-    this.depositLimitsButton.click();
-    return depositView;
-  }
-
-  openMyRewardsPage() {
-    this.myRewardsButton.waitForDisplayed();
-    this.myRewardsButton.click();
-  }
-
-  openHelpPage() {
-    this.footerHelp.waitForDisplayed();
-    this.footerHelp.click();
-  }
-
-  openMainView() {
-    this.open();
-    header.balanceButton.click();
-    return this;
-  }
-  goToBonuses() {
-    this.bonusesButton.click();
-    browser.switchWindow('GoAcctFreebet');
-  }
-
-  logout() {
-    this.logoutButton.click();
-    return this;
-  }
-
-  openStandalonePage(page) {
-    switch (envConfig.env) {
-      case 'pp1':
-        browser.newWindow(urls.url.standaloneCOM + page);
-        break;
-      case 'pp1-es':
-        browser.newWindow(urls.url.standaloneES + page);
-        break;
-      case 'pp1-it':
-        browser.newWindow(urls.url.standaloneIT + page);
-        break;
-    }
-    browser.pause(1000);
-    return this;
-  }
-
-  /**
-   * @param tab number of a tab which you want to focus on
-   * by default it focus on the last tab
-   */
-  switchToWindowHandle(tab) {
-    browser.pause(100);
-    const handles = browser.getWindowHandles();
-    if (tab === undefined) {
-      browser.switchToWindow(handles[handles.length - 1]);
-    } else {
-      browser.switchToWindow(handles[tab]);
-    }
+  getRegistration() {
+    this.cookiesAccept.click();
+    this.insured.waitForDisplayed();
+    this.insured.click();
+    this.Continue.waitForDisplayed();
+    this.Continue.click();
+    this.yes.waitForDisplayed();
+    this.yes.click();
+    this.carUsed.waitForDisplayed();
+    this.carUsed.click();
+    this.Continue.waitForDisplayed();
+    this.Continue.click();
+    this.selectCar.waitForDisplayed();
+    this.selectCar.click();
+    this.carModel.waitForDisplayed();
+    this.carModel.click();
+    this.shapeIsTheCar.waitForDisplayed();
+    this.shapeIsTheCar.click();
+    this.engin.waitForDisplayed();
+    this.engin.click();
+    this.monthYearFirstRegistered.waitForDisplayed();
+    this.monthYearFirstRegistered.setValue('10.2000');
+    this.monthYearOwnerRegistered.waitForDisplayed();
+    this.monthYearOwnerRegistered.setValue('10.2010');
+    this.Continue.click();
+    this.birthDate.waitForDisplayed();
+    this.birthDate.setValue('07.10.1986');
   }
 }
 

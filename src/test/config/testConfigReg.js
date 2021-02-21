@@ -5,10 +5,6 @@ const logLevels = {
 };
 
 const envNames = {
-  pp1: 'pp1',
-  pp2: 'pp2',
-  pp3: 'pp3',
-  pt1: 'pt1',
   liv: 'liv',
 };
 

@@ -8,8 +8,8 @@ const localIdentifier = Math.random().toString(36).substr(2, 9);
 const bsTestName = 'Smoke test';
 
 exports.config = merge(wdioConf.config, {
-  user: 'joannam1',
-  key: 'FCn5GfodbtAzzteakE71',
+  user: 'USERNAME',
+  key: 'USERKEY',
   capabilities: [
     /*
         {

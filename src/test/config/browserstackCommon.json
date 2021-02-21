@@ -8,7 +8,7 @@
   "browserstack": {
     "local": true,
     "video": true,
-    "user": "joannam1",
-    "key": "FCn5GfodbtAzzteakE71"
+    "user": "USERNAME",
+    "key": "USERKEY"
   }
 }

@@ -13,42 +13,7 @@ exports.config = {
   specs: ['./src/test/specs/**/*.js'],
   exclude: [],
   suites: {
-    //liv com
-    smokeLivCom: ['./src/test/specs/smoke/**'],
-    //liv es
-    smokeLivEs: ['./src/test/specs/smoke/**'],
-    //liv it
-    smokeLivIt: ['./src/test/specs/smoke/**'],
-    // Spain
-    smokeSpain: ['./src/test/specs/smoke/**'],
-    //Standalone smoke
-    standalone: ['./src/test/specs/standalone/**'],
-    standaloneSaferGambling: ['./src/test/specs/standalone/saferGambling.js'],
-    saferGamblingLandingPage: ['./src/test/specs/smoke/safergambling/saferGamblingLandingPage.js'],
-    saferGamblingSelfAssessment: ['./src/test/specs/smoke/safergambling/saferGamblingSelfAssessment.js'],
-    saferGamblingDepositLimits: ['./src/test/specs/smoke/safergambling/saferGamblingDepositLimits.js'],
-    saferGamblingGamingTimeReminders: ['./src/test/specs/smoke/safergambling/saferGamblingGamingTimeReminders.js'],
-    smokeSpainDepositLimits: ['./src/test/specs/flaky/smokeSpainDepositLimits.js'],
-    // Italy
-    smokeItaly: ['./src/test/specs/smoke/**'],
-    smokeItalyDepositLimits: ['./src/test/specs/smoke/flaky/smokeItalyDepositLimits.js'],
-    // Com
-    smokeCom: ['./src/test/specs/smoke/**'],
-    smokeComDepositLimits: ['./src/test/specs/flaky/smokeSpainDepositLimits.js'],
-    // Generic single suites
-    security: ['./src/test/specs/smoke/security/**'],
-    securitySession: ['./src/test/specs/smoke/security/session.js'],
-    navigation: ['./src/test/specs/smoke/navigation/*.js'],
-    navigationHome: ['./src/test/specs/smoke/navigation/navigation.js'],
     navigationExternalLinks: ['./src/test/specs/smoke/navigation/externalLinks.js'],
-    transactions: ['./src/test/specs/smoke/transactions/**'],
-    preferences: ['./src/test/specs/smoke/preferences/*.js'],
-    preferencesContact: ['./src/test/specs/smoke/preferences/contact.js'],
-    preferencesMarketing: ['./src/test/specs/smoke/preferences/marketing.js'],
-    // Flaky or obsolete tests
-    flakyMyBets: ['./src/test/specs/flaky/myBets.js'],
-    flakyDepositLimits: ['./src/test/specs/flaky/depositLimits.js', './src/test/specs/flaky/depositLimitsSmoke.js'],
-    flakyDataCaching: ['./src/test/specs/flaky/dataCaching.js'],
   },
   maxInstances: 10,
   capabilities: [
